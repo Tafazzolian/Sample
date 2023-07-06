@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Shop {% endblock %}
+
+{% block content %}
+    <h3>Orders</h3><hr/>
+    <a class="alert alert-success" href='{% url 'form' %}'> Order now! </a><hr/>
+{% for i in data %}
+<!-- <a href='/details/{{i.id}}'> {{ i.title }} </a><br/> -->
+ <a href='{% url 'table id detail' i.id %}'> {{ i.title }}</a><br/>
+
+{% endfor %}
+      
+{% endblock %}

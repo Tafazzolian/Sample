@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if not request.user.is_authenticated %}
+    <form action="" method="post">
+        {% csrf_token %}
+      <p>{{ form.as_p }}</p>
+        <input type="submit" value="Register"><hr/>
+    <a class="alert alert-success" href='{% url 'user_login' %}'> Login </a>
+        {% else %}
+    <a class="alert alert-success" href='{% url 'user_logout' %}'> Logout </a><hr/>
+    {% endif %}
+    </form>
+{% endblock %}

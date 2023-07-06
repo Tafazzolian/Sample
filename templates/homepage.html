@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <h3>Hello {{ request.user | upper }}...</h3>
+
+    
+{% endblock %}
